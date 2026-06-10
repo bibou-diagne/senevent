@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import EvenementCarte from "./components/EvenementCarte";
 import SearchBar from "./components/SearchBar";
+import EtatChargement from "./components/EtatChargement";
 import styles from "./App.module.css";
 const App = () => {
 const [evenements, setEvenements] = useState([]);
@@ -40,17 +41,11 @@ document.title = "SenEvent";
 return (
 <div className={styles.container}>
 <h1 className={styles.titre}>SenEvent--- Evenements a Dakar</h1>
-{chargement && (
-    <p className={styles.message}>Chargement des evenements...</p>
-)}
-{erreur && (
-<div className={styles.erreur}>
-<p>Erreur : {erreur}</p>
-<button className={styles.bouton} onClick={charger}>
-Reessayer
-</button>
-</div>
-)}
+<EtatChargement
+chargement={chargement}
+erreur={erreur}
+onReessayer={charger}
+/>
 {!chargement && !erreur && (
 <>
 <SearchBar recherche={recherche} onRecherche={setRecherche} />
@@ -58,7 +53,9 @@ Reessayer
 {evenementsFiltres.length} evenement(s) trouve(s)
 </p>
 {evenementsFiltres.length === 0 ? (
-<p className={styles.message}>Aucun evenement ne correspond.</p>
+<p className={styles.messageVide}>
+Aucun evenement ne correspond.
+</p>
 ) : (
 evenementsFiltres.map(ev => (
 <EvenementCarte key={ev.id} ev={ev} afficherDetails={true} />
