@@ -22,3 +22,7 @@ margin: 0.5rem 0 0 0;
 color: #ea7d2b;
 font-weight: bold;
 }
+.lien {
+  text-decoration: none;
+  color: inherit;
+}
