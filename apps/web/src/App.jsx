@@ -29,21 +29,18 @@ const App = () => {
     return () => subscription.subscription.unsubscribe();
   }, []);
 
-  // La fonction charger() du Lab 3 reste pour l'instant, adaptee au Lab 6
   const charger = async () => {
-    setChargement(true);
-    setErreur(null);
-    try {
-      const reponse = await fetch("/evenements.json");
-      if (!reponse.ok) throw new Error(`Erreur HTTP ${reponse.status}`);
-      const data = await reponse.json();
-      setEvenements(data);
-    } catch (e) {
-      setErreur(e.message);
-    } finally {
-      setChargement(false);
-    }
-  };
+  setChargement(true);
+  setErreur(null);
+  const { data, error } = await supabase
+    .from("evenements")
+    .select("*")
+    .order("date_debut", { ascending: true });
+
+  if (error) setErreur(error.message);
+  else setEvenements(data);
+  setChargement(false);
+};
 
   useEffect(() => {
     charger();
