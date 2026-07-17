@@ -34,7 +34,7 @@ const App = () => {
   setErreur(null);
   const { data, error } = await supabase
     .from("evenements")
-    .select("*")
+    .select("*, profiles (nom)")
     .order("date_debut", { ascending: true });
 
   if (error) setErreur(error.message);
