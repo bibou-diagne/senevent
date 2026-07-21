@@ -1,0 +1,24 @@
+.inscrire {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.desinscrire {
+  background-color: #ef6c00;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.info {
+  color: #666;
+  font-style: italic;
+}
