@@ -1,5 +1,4 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { supabase } from "../lib/supabase";
 import BoutonInscription from "../components/BoutonInscription";
 import styles from "./Detail.module.css";
 
@@ -24,10 +23,7 @@ const Detail = ({ evenements, session }) => {
     const confirme = window.confirm("Supprimer cet evenement ?");
     if (!confirme) return;
 
-    const { error } = await supabase
-      .from("evenements")
-      .delete()
-      .eq("id", evenement.id);
+    const { error } = await supprimerEvenement(evenement.id);
 
     if (error) {
       alert("Erreur : " + error.message);

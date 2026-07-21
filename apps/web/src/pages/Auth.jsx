@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { supabase } from "../lib/supabase";
 import { useNavigate } from "react-router-dom";
 import styles from "./Auth.module.css";
 
@@ -19,7 +18,7 @@ const Auth = () => {
 
     try {
       if (mode === "signup") {
-        const { data, error } = await supabase.auth.signUp({
+        const { data, error } = await sInscrire({
           email,
           password: motDePasse,
         });
@@ -33,7 +32,7 @@ const Auth = () => {
           if (e2) throw e2;
         }
       } else {
-        const { error } = await supabase.auth.signInWithPassword({
+        const { error } = await  seConnecter({
           email,
           password: motDePasse,
         });
