@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { seDeconnecter as seDeconnecterSupabase } from "@senevent/shared";
 import styles from "./NavBar.module.css";
 
 const NavBar = ({ session }) => {
@@ -6,7 +7,7 @@ const NavBar = ({ session }) => {
     isActive ? `${styles.lien} ${styles.lienActif}` : styles.lien;
 
   const seDeconnecter = async () => {
-    await seDeconnecter();
+    await seDeconnecterSupabase();
   };
 
   return (
