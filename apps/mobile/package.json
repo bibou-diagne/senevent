@@ -1,9 +1,9 @@
 {
   "name": "mobile",
   "version": "1.0.0",
-  "main": "index.js",
   "main": "expo-router/entry",
   "dependencies": {
+    "@expo/vector-icons": "^15.0.2",
     "@senevent/shared": "*",
     "@supabase/supabase-js": "^2.0.0",
     "expo": "~57.0.30",
