@@ -27,3 +27,9 @@ export async function getSession() {
   const { data } = await getSupabase().auth.getSession();
   return data.session;
 }
+export async function creerProfil(id: string, nom: string) {
+  const { error } = await getSupabase()
+    .from("profiles")
+    .insert({ id, nom, role: "PUBLIC" });
+  if (error) throw error;
+}
