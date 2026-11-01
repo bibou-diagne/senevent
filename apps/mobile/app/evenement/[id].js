@@ -1,3 +1,4 @@
+import BoutonInscription from "../../components/BoutonInscription";
 import { useState, useEffect } from "react";
 import {
   View, Text, Image, StyleSheet, ScrollView, ActivityIndicator,
@@ -54,6 +55,12 @@ export default function Detail() {
           <Text style={styles.label}>Prix</Text>
           <Text style={styles.prix}>{prix}</Text>
         </View>
+        <View style={styles.ligne}>
+          <Text style={styles.label}>Prix</Text>
+          <Text style={styles.prix}>{prix}</Text>
+        </View>
+
+        <BoutonInscription evenementId={evenement.id} />
       </View>
     </ScrollView>
   );
