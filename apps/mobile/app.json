@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "mobile",
-    "slug": "mobile",
+    "name": "SenEvent",
+    "slug": "senevent",
     "scheme": "senevent",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -11,8 +11,9 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "sn.ucad.senevent.equipe1",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#1a3a5c",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
