@@ -26,6 +26,17 @@
       "expo-asset",
       "expo-status-bar",
       "expo-router"
-    ]
+    ],
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "c5e78a99-f516-46b3-b520-5595a2d35c99"
+      }
+    },
+    "owner": "bibou_diagne"
   }
 }
